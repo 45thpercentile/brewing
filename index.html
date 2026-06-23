@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homebrewing Equipment For Sale</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f0;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #2c4a1e;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+    header p  { margin-top: 0.5rem; opacity: 0.85; font-size: 1rem; }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #e8e8e8;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-img-wrap img { transform: scale(1.03); }
+
+    .card-body {
+      padding: 1.1rem 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: #444;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2c4a1e;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #2c4a1e;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .contact-btn:hover { background: #3d6b2a; }
+
+    .sold-badge {
+      display: inline-block;
+      background: #c0392b;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 6px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 500px) {
+      main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Homebrewing Equipment For Sale</h1>
+  <p>lukefraser@gmail.com - (925) 433-1818</p>
+</header>
+
+<main>
+
+  <!-- Item 1 -->
+  <article class="card">
+    <div class="card-img-wrap">
+      <img src="20260622_173446.jpg" alt="Brew Kettles, Wort Chiller & Grain Bag Set" loading="lazy"
+           onclick="openLightbox(this.src, this.alt)">
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">8 gallon and 5 gallon kettles, wort chiller, hop spider</h2>
+      <p class="card-desc">
+        8 and 5 gallon kettles with thermometer and ball valve drain.
+		Copper wort chiller.
+		Stainless steel mesh hop spider.
+      </p>
+      <div class="card-footer">
+        <span class="price">$10 each</span>
+        <a class="contact-btn" href="mailto:lukefraser@gmail.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Item 2 -->
+  <article class="card">
+    <div class="card-img-wrap">
+      <img src="20260622_173644.jpg" alt="Igloo 10-Gallon Mash Tun with False Bottom" loading="lazy"
+           onclick="openLightbox(this.src, this.alt)">
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Igloo 10-Gallon Mash Tun with False Bottom</h2>
+      <p class="card-desc">
+        Igloo 10-gallon cooler converted to a mash tun with a brass ball valve. Comes with a stainless
+        steel false bottom (round, diamond-plate pattern) that sits inside to filter the grain bed during
+        lautering. Well-insulated for consistent mash temperatures.
+      </p>
+      <div class="card-footer">
+        <span class="price">$40</span>
+        <a class="contact-btn" href="mailto:lukefraser@gmail.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Item 3 -->
+  <article class="card">
+    <div class="card-img-wrap">
+      <img src="20260622_173718.jpg" alt="ATC Refractometer with Case" loading="lazy"
+           onclick="openLightbox(this.src, this.alt)">
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">ATC Refractometer with Case</h2>
+      <p class="card-desc">
+        Automatic temperature compensation (ATC) refractometer.
+      </p>
+      <div class="card-footer">
+        <span class="price">$15</span>
+        <a class="contact-btn" href="mailto:lukefraser@gmail.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Item 4 -->
+  <article class="card">
+    <div class="card-img-wrap">
+      <img src="20260622_173834.jpg" alt="Bottling Equipment — Caps, Auto-Siphon & Bench Capper" loading="lazy"
+           onclick="openLightbox(this.src, this.alt)">
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Bottling Equipment — Bottle rack, capper, bottle rinser</h2>
+      <p class="card-desc">
+	    Bottling gear
+
+      </p>
+      <div class="card-footer">
+        <span class="price">Free</span>
+        <a class="contact-btn" href="mailto:lukefraser@gmail.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Item 5 -->
+  <article class="card">
+    <div class="card-img-wrap">
+      <img src="20260622_173944.jpg" alt="Stainless Steel oxygen stone and wand" loading="lazy"
+           onclick="openLightbox(this.src, this.alt)">
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Stainless Steel oxygen stone and wand</h2>
+      <p class="card-desc">
+        Oxygen stone and wand.  Fits oxygen tank.
+      </p>
+      <div class="card-footer">
+        <span class="price">Free</span>
+        <a class="contact-btn" href="mailto:lukefraser@sscinc.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Item 6 — no photo -->
+  <article class="card">
+    <div class="card-body" style="padding-top: 1.4rem;">
+      <h2 class="card-title">Additional brewing gear</h2>
+      <p class="card-desc">
+        I have a few 3 and 5 gallon fermenters, air locks, ball valves, and other random gear.  Free to a good home.
+      </p>
+      <div class="card-footer">
+        <span class="price">Free</span>
+        <a class="contact-btn" href="mailto:lukefraser@gmail.com">Contact</a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>Questions? Email <a href="mailto:lfraser@sscinc.com">lfraser@sscinc.com</a></p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(src, alt) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
